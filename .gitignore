@@ -8,4 +8,5 @@
 *.map
 *.js
 !webpack.config.js
+!/dist/static/js/**/*.js
 
