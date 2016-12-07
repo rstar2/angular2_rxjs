@@ -1,0 +1,11 @@
+/node_modules
+.vscode
+.idea
+*.iml
+*.ipr
+*.iws
+
+*.map
+*.js
+!webpack.config.js
+
