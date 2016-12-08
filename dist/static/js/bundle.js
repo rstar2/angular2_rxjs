@@ -44,40 +44,23 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// import'./from-create';
+	// import'./from-promise';
+	// import'./from-dom-events';
+	// import'./from-arrays';
+	// import'./from-range';
+	// import'./from-ajax';
+	// import'./from-interval';
+	// import'./from-timer';
 	"use strict";
-	var Rx = __webpack_require__(1);
-	// import { Observable } from "rxjs/Observable";
-	// import { Subscription } from "rxjs/Subscription";
-	/////////////////
-	// Promises
-	/////////////////
-	var promise = new Promise(function (resolve) {
-	    setTimeout(function () {
-	        resolve("Promise result");
-	    }, 2000);
-	});
-	promise.then(function (result) { return console.log(result); }).
-	    catch(function (error) { return console.log("Promise error: " + error); });
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////
-	// Observables
-	/////////////////
-	var observable$ = new Rx.Observable(function (observer) {
-	    var timeout = setTimeout(function () {
-	        observer.next("Observable result");
-	        observer.complete();
-	    }, 2000);
-	    // this is the unsubscribe/dispose/cancel method
-	    return function () {
-	        clearTimeout(timeout);
-	    };
-	});
-	var destroy = observable$.subscribe(function (result) { return console.log(result); }, function (error) { return console.log("Observable error: " + error); }, function () { return console.log("Observable completed"); });
-	// destroy.unsubscribe();
-	$(document).ready(function () {
-	    console.log('Ready');
-	});
-	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxJQUFZLEVBQUUsV0FBTSxTQUFTLENBQUMsQ0FBQTtBQUU5QixnREFBZ0Q7QUFDaEQsb0RBQW9EO0FBRXBELGlCQUFpQjtBQUNqQixXQUFXO0FBQ1gsaUJBQWlCO0FBQ2pCLElBQUksT0FBTyxHQUFHLElBQUksT0FBTyxDQUFTLFVBQUEsT0FBTztJQUNoQyxVQUFVLENBQUM7UUFDRixPQUFPLENBQUMsZ0JBQWdCLENBQUMsQ0FBQztJQUNuQyxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUM7QUFDbEIsQ0FBQyxDQUFDLENBQUM7QUFDSCxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQUEsTUFBTSxJQUFJLE9BQUEsT0FBTyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsRUFBbkIsQ0FBbUIsQ0FBQztJQUNsQyxLQUFLLENBQUMsVUFBQSxLQUFLLElBQUksT0FBQSxPQUFPLENBQUMsR0FBRyxDQUFDLGlCQUFpQixHQUFHLEtBQUssQ0FBQyxFQUF0QyxDQUFzQyxDQUFDLENBQUM7QUFFaEUsOEZBQThGO0FBRzlGLGlCQUFpQjtBQUNqQixjQUFjO0FBQ2QsaUJBQWlCO0FBRWpCLElBQUksV0FBVyxHQUFHLElBQUksRUFBRSxDQUFDLFVBQVUsQ0FBUyxVQUFBLFFBQVE7SUFDM0MsSUFBSSxPQUFPLEdBQUcsVUFBVSxDQUFDO1FBQ2hCLFFBQVEsQ0FBQyxJQUFJLENBQUMsbUJBQW1CLENBQUMsQ0FBQztRQUNuQyxRQUFRLENBQUMsUUFBUSxFQUFFLENBQUM7SUFDN0IsQ0FBQyxFQUFFLElBQUksQ0FBQyxDQUFDO0lBRVQsZ0RBQWdEO0lBQ2hELE1BQU0sQ0FBQztRQUNFLFlBQVksQ0FBQyxPQUFPLENBQUMsQ0FBQztJQUMvQixDQUFDLENBQUM7QUFDWCxDQUFDLENBQUMsQ0FBQztBQUdILElBQUksT0FBTyxHQUFvQixXQUFXLENBQUMsU0FBUyxDQUMzQyxVQUFBLE1BQU0sSUFBSSxPQUFBLE9BQU8sQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLEVBQW5CLENBQW1CLEVBQzdCLFVBQUEsS0FBSyxJQUFJLE9BQUEsT0FBTyxDQUFDLEdBQUcsQ0FBQyxvQkFBb0IsR0FBRyxLQUFLLENBQUMsRUFBekMsQ0FBeUMsRUFDbEQsY0FBTSxPQUFBLE9BQU8sQ0FBQyxHQUFHLENBQUMsc0JBQXNCLENBQUMsRUFBbkMsQ0FBbUMsQ0FBQyxDQUFDO0FBRXBELHlCQUF5QjtBQUV6QixDQUFDLENBQUMsUUFBUSxDQUFDLENBQUMsS0FBSyxDQUFDO0lBQ1QsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsQ0FBQztBQUU5QixDQUFDLENBQUMsQ0FBQyJ9
+	// import'./operators/map';
+	// import'./operators/pluck';
+	// import'./operators/merge';
+	// import'./operators/concat';
+	// import'./operators/mergeMap';
+	__webpack_require__(357);
+	// import'./operators/concatMap';
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHlCQUF5QjtBQUN6QiwwQkFBMEI7QUFDMUIsNkJBQTZCO0FBQzdCLHlCQUF5QjtBQUN6Qix3QkFBd0I7QUFDeEIsdUJBQXVCO0FBQ3ZCLDJCQUEyQjtBQUMzQix3QkFBd0I7O0FBRXhCLDJCQUEyQjtBQUMzQiw2QkFBNkI7QUFDN0IsNkJBQTZCO0FBQzdCLDhCQUE4QjtBQUU5QixnQ0FBZ0M7QUFDaEMsUUFBTSx1QkFBdUIsQ0FBQyxDQUFBO0FBQzlCLGlDQUFpQyJ9
 
 /***/ },
 /* 1 */
@@ -18367,6 +18350,62 @@
 	}(AsyncScheduler_1.AsyncScheduler));
 	exports.AnimationFrameScheduler = AnimationFrameScheduler;
 	//# sourceMappingURL=AnimationFrameScheduler.js.map
+
+/***/ },
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Rx = __webpack_require__(1);
+	function getUserObservable(name) {
+	    return new Rx.Observable(function (observer) {
+	        var jqXHR = $.ajax({
+	            method: 'GET',
+	            url: 'https://api.github.com/users/' + name,
+	            dataType: 'jsonp'
+	        });
+	        jqXHR.done(function (v) {
+	            return observer.next(v);
+	        }).
+	            fail(function (err) {
+	            return observer.error(err);
+	        }).
+	            always(function () {
+	            return observer.complete();
+	        });
+	        // this is the unsubscribe/dispose/cancel method
+	        return function () {
+	            // NOTE - JSONP requests cannot be aborted, so this will have no efect
+	            jqXHR.abort("Cancel");
+	        };
+	    });
+	}
+	$(document).ready(function () {
+	    // same example as in from-ajax.ts but with switchMap
+	    Rx.Observable.fromEvent($("#input"), 'keyup').
+	        map(function (event) { return event.target.value; }).
+	        switchMap(function (name) { return getUserObservable(name); }).
+	        subscribe(function (result) {
+	        var userData = result.data;
+	        console.log("User data: " + userData);
+	        $("#report").html("Url - " + userData.url);
+	    });
+	});
+	//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3dpdGNoTWFwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsic3dpdGNoTWFwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxJQUFZLEVBQUUsV0FBTSxTQUFTLENBQUMsQ0FBQTtBQUU5QiwyQkFBMkIsSUFBWTtJQUM5QixNQUFNLENBQUMsSUFBSSxFQUFFLENBQUMsVUFBVSxDQUFDLFVBQUEsUUFBUTtRQUN4QixJQUFNLEtBQUssR0FBYyxDQUFDLENBQUMsSUFBSSxDQUFDO1lBQ3ZCLE1BQU0sRUFBRSxLQUFLO1lBQ2IsR0FBRyxFQUFFLCtCQUErQixHQUFHLElBQUk7WUFDM0MsUUFBUSxFQUFFLE9BQU87U0FDekIsQ0FBQyxDQUFDO1FBRUgsS0FBSyxDQUFDLElBQUksQ0FBQyxVQUFBLENBQUM7WUFDSCxPQUFBLFFBQVEsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDO1FBQWhCLENBQWdCLENBQUM7WUFDakIsSUFBSSxDQUFDLFVBQUEsR0FBRztZQUNDLE9BQUEsUUFBUSxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUM7UUFBbkIsQ0FBbUIsQ0FBQztZQUM3QixNQUFNLENBQUM7WUFDRSxPQUFBLFFBQVEsQ0FBQyxRQUFRLEVBQUU7UUFBbkIsQ0FBbUIsQ0FBQyxDQUFDO1FBRXZDLGdEQUFnRDtRQUNoRCxNQUFNLENBQUM7WUFFRSxzRUFBc0U7WUFFdEUsS0FBSyxDQUFDLEtBQUssQ0FBQyxRQUFRLENBQUMsQ0FBQztRQUMvQixDQUFDLENBQUM7SUFDWCxDQUFDLENBQUMsQ0FBQztBQUNaLENBQUM7QUFFRCxDQUFDLENBQUMsUUFBUSxDQUFDLENBQUMsS0FBSyxDQUFDO0lBQ1QscURBQXFEO0lBRXJELEVBQUUsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLENBQUMsQ0FBQyxRQUFRLENBQUMsRUFBRSxPQUFPLENBQUM7UUFDcEMsR0FBRyxDQUFDLFVBQUEsS0FBSyxJQUFJLE9BQUEsS0FBSyxDQUFDLE1BQU0sQ0FBQyxLQUFLLEVBQWxCLENBQWtCLENBQUM7UUFDaEMsU0FBUyxDQUFDLFVBQUEsSUFBSSxJQUFJLE9BQUEsaUJBQWlCLENBQUMsSUFBSSxDQUFDLEVBQXZCLENBQXVCLENBQUM7UUFDMUMsU0FBUyxDQUFDLFVBQUEsTUFBTTtRQUNQLElBQU0sUUFBUSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUM7UUFDN0IsT0FBTyxDQUFDLEdBQUcsQ0FBQyxhQUFhLEdBQUcsUUFBUSxDQUFDLENBQUM7UUFDdEMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxDQUFDLElBQUksQ0FBQyxXQUFTLFFBQVEsQ0FBQyxHQUFLLENBQUMsQ0FBQztJQUNwRCxDQUFDLENBQUMsQ0FBQztBQUNyQixDQUFDLENBQUMsQ0FBQyJ9
 
 /***/ }
 /******/ ]);
