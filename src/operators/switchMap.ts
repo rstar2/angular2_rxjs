@@ -29,7 +29,7 @@ $(document).ready(() => {
          // same example as in from-ajax.ts but with switchMap
 
          Rx.Observable.fromEvent($("#input"), 'keyup').
-                  map(event => event.target.value).
+                  map((event: any) => event.target.value).
                   switchMap(name => getUserObservable(name)).
                   subscribe(result => {
                            const userData = result.data;
