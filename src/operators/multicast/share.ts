@@ -1,0 +1,7 @@
+import * as Rx from 'rxjs/Rx';
+
+// Returns a new Observable that multicasts (shares) the original Observable.
+// As long as there is at least one Subscriber this Observable will be subscribed and emitting data.
+// When all subscribers have unsubscribed it will unsubscribe from the source Observable.
+// Because the Observable is multicasting it makes the stream hot.
+// This is an alias for .publish().refCount().
