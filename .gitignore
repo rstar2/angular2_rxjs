@@ -1,12 +1,12 @@
 /node_modules
-# .vscode
+# /.vscode
 .idea
 *.iml
 *.ipr
 *.iws
 
-*.map
-*.js
-!webpack.config.js
-!/dist/static/js/**/*.js
+/src/**/*.map
+/src/**/*.js
 
+/dist/static/js/bundle.js
+/dist/static/js/bundle.js.map
