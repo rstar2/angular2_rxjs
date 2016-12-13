@@ -1,5 +1,5 @@
 {
-  "name": "typescript_rxjs",
+  "name": "angular2_rxjs",
   "version": "0.0.1",
   "scripts": {
     "watch": "webpack --watch",
