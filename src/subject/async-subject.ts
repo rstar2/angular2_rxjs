@@ -3,7 +3,7 @@ import * as Rx from 'rxjs/Rx';
 // The AsyncSubject is a variant where only the last value of the Observable
 // execution is sent to its observers, and only when the execution completes.
 
-var subject = new Rx.AsyncSubject();
+let subject = new Rx.AsyncSubject();
 
 subject.subscribe({
   next: (v) => console.log('observerA: ' + v)

@@ -45,13 +45,13 @@ subject.next(5);
 // In the following example we use a large buffer size of 100,
 // but a window time parameter of just 500 milliseconds.
 
-var subject2 = new Rx.ReplaySubject(100, 500 /* windowTime - in ms*/);
+let subject2 = new Rx.ReplaySubject(100, 500 /* windowTime - in ms*/);
 
 subject2.subscribe({
   next: (v) => console.log('observerC: ' + v)
 });
 
-var i = 1;
+let i = 1;
 setInterval(() => subject2.next(i++), 200);
 
 setTimeout(() => {

@@ -4,7 +4,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "serve": "live-server --port=8000",
-    "start": "npm run watch | npm run serve"
+    "start": "concurrently -p \"[{name}]\" -n \"HTTP,TS\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run watch\" \"npm run serve\""
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -14,7 +14,9 @@
   },
   "devDependencies": {
     "@types/jquery": "^2.0.34",
+    "concurrently": "^3.1.0",
     "ts-loader": "^0.8.2",
+    "tslint": "^4.0.2",
     "typescript": "~2.0.3",
     "webpack-dev-server": "^1.14.0"
   }
