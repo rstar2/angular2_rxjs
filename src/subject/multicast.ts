@@ -20,4 +20,7 @@ multicasted.subscribe({
 });
 
 // This is, under the hood, `source.subscribe(subject)`:
-multicasted.connect();
+const subscription = multicasted.connect();
+
+// unsubscribe when needed from the the shared Observable in order to cancel it
+subscription.unsubscribe();

@@ -40,7 +40,7 @@ subject.next(2);
 
 // You can subscribe providing a Subject
 const observable = Rx.Observable.from([10, 20, 30]);
-observable.subscribe(subject); 
+observable.subscribe(subject);
 
 // observerA: 10
 // observerB: 10

@@ -14,7 +14,7 @@ module.exports = {
     // Turn on sourcemaps
     devtool: 'source-map',
     // Add minification
-    //plugins: [
+    // plugins: [
     //    new webpack.optimize.UglifyJsPlugin()
-    //]
+    // ]
 };

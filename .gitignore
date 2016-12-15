@@ -10,3 +10,5 @@
 
 /dist/static/js/bundle.js
 /dist/static/js/bundle.js.map
+
+npm-debug.log.*
