@@ -16,4 +16,6 @@
 // import './operators/switchMap';
 // import './operators/concatMap';
 
-import './subject/async-subject';
+// import './subject/async-subject';
+
+import './operators/multicast/share';

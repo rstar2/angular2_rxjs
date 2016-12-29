@@ -1,15 +1,12 @@
 import * as Rx from 'rxjs/Rx';
 
+// Emits values emitted by the source Observable so long as each value satisfies the given predicate,
+// and then completes as soon as this predicate is not satisfied.
 
-// Emits the values emitted by the source Observable until
-// a notifier Observable emits a value.
+// Takes values from the source only while they pass the condition given.
+// When the first value does not satisfy, it completes.
 
-// Lets values pass until a second Observable, notifier, emits something.
-// Then, it completes.
-
-const interval = Rx.Observable.interval(1000);
+// Emit click events only while the clientX property is greater than 200
 const clicks = Rx.Observable.fromEvent(document, 'click');
-const result = interval.takeUntil(clicks);
+const result = clicks.takeWhile((ev: any) => ev.clientX > 200);
 result.subscribe(x => console.log(x));
-
-// logs until clicked
