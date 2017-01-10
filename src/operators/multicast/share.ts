@@ -7,7 +7,7 @@ import * as Rx from 'rxjs/Rx';
 // This is an alias for .publish().refCount().
 
 // COLD.share() = HOT
-// COLD - new producer created for each subscription
+// COLD - new producer is created for each subscription
 // HOT  - a single producer is created on the first subscription
 
 // ------------------------------------------------------------------------------------
@@ -56,11 +56,11 @@ let obsTooHotInfinite = Rx.Observable.interval(1000)
          .publish();
 obsTooHotInfinite.connect(); // start producing now even there're no subscriptions
 
-// setTimeout(() => {
-//          obsTooHotInfinite.subscribe(v => console.log('1st subscriber:' + v));
-//          setTimeout(() =>
-//                   obsTooHotInfinite.subscribe(v => console.log('2nd subscriber:' + v)), 1000);
-// }, 2000);
+setTimeout(() => {
+         obsTooHotInfinite.subscribe(v => console.log('1st subscriber:' + v));
+         setTimeout(() =>
+                  obsTooHotInfinite.subscribe(v => console.log('2nd subscriber:' + v)), 1000);
+}, 2000);
 
 // 1st subscriber:2
 // 1st subscriber:3
