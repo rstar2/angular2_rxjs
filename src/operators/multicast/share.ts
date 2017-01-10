@@ -7,7 +7,7 @@ import * as Rx from 'rxjs/Rx';
 // This is an alias for .publish().refCount().
 
 // COLD.share() = HOT
-// COLD - new produced created for each subscription
+// COLD - new producer created for each subscription
 // HOT  - a single producer is created on the first subscription
 
 // ------------------------------------------------------------------------------------
