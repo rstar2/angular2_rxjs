@@ -1,5 +1,5 @@
 /node_modules
-# /.vscode
+/.vscode/symbols.json
 .idea
 *.iml
 *.ipr
@@ -8,7 +8,8 @@
 /src/**/*.map
 /src/**/*.js
 
-/dist/static/js/bundle.js
-/dist/static/js/bundle.js.map
+/public/static/js/bundle.js
+/public/static/js/bundle.js.map
 
+npm-debug.log
 npm-debug.log.*

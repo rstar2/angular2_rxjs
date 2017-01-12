@@ -14,7 +14,7 @@ $ npm install
 ```
 
 ### Compile
-To compile all js to dist/static/js/bundle.js
+To compile all js to public/static/js/bundle.js
 
 ```sh
 $ webpack
