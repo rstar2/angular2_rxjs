@@ -4,7 +4,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "serve": "live-server --port=8000",
-    "start": "concurrently -p \"[{name}]\" -n \"HTTP,TS\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run watch\" \"npm run serve\""
+    "start": "concurrently -p \"[{name}]\" -n \"TS,HTTP\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run watch\" \"npm run serve\""
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
