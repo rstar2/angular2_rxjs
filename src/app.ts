@@ -11,11 +11,12 @@
 // import './operators/pluck';
 // import './operators/merge';
 // import './operators/concat';
-
 // import './operators/mergeMap';
 // import './operators/switchMap';
 // import './operators/concatMap';
+// import './operators/multicast/share';
 
 // import './subject/async-subject';
 
-import './operators/multicast/share';
+
+import './examples/dnd';
