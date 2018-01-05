@@ -3,23 +3,48 @@ import * as Rx from 'rxjs/Rx';
 
 $(document).ready(() => {
     $('body').append(`
-        <button id="btnClick">Click</button>
+        <h4>List 1:</h4>
+        <ul class='droppable'>
+            <li>Item fixed in list 2</li>
+            <li class='draggable' id='1'>Item 1</li>
+            <li class='draggable' id='2'>Item 2</li>
+            <li class='draggable' id='3'>Item 3</li>
+        </ul>
         <hr/>
-
-        <input id="input" type="text"/>
-
-        <hr/>
-
-        <div id="report"></div>
+        
+        <h4>List 2:</h4>
+        <ul class='droppable'>
+            <li>Item fixed in list 2</li>
+            <li class='draggable' id='4'>Item 4</li>
+            <li class='draggable' id='5'>Item 5</li>
+            <li class='draggable' id='6'>Item 6</li>
+        </ul>
         `);
 
-    const $btn = $('#btnClick');
-    const btnClickStream$ = Rx.Observable.fromEvent($btn, 'click');
-    btnClickStream$.subscribe(event => console.log('Clicked'));
 
-    const $input = $('#input');
-    const inputKeyStream$ = Rx.Observable.fromEvent($input, 'keyup');
-    inputKeyStream$.subscribe((event: any) => {
-        console.log('value - ' + event.target.value);
+    const $draggable = $('.draggable');
+    const targetMouseDown$ = Rx.Observable.fromEvent($draggable, 'mousedown');
+
+    const docMouseMove$ = Rx.Observable.fromEvent(document, 'mousemove');
+    const targetMouseUp$ = Rx.Observable.fromEvent(document, 'mouseup');
+
+    const dragAndDrop$ = targetMouseDown$
+        .do((event: Event) => {
+            console.log('Start dragging', event.target.id);
+        })
+        .switchMap((event: Event) => {
+            const target = event.target;
+
+            const move$ = docMouseMove$
+                .takeUntil(targetMouseUp$)
+                .map((event: Event) => ({ x: event.clientX, y: event.clientY, target, dropped: false }));
+
+
+            // TODO: combine with the last {x, y}
+            return move$.concat(Rx.Observable.of({ target, dropped: true }));
+        });
+
+    dragAndDrop$.subscribe(({ x, y, target, dropped }) => {
+        console.log('Dragging', target.id, x, y, dropped);
     });
 });
