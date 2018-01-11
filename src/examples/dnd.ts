@@ -30,21 +30,35 @@ $(document).ready(() => {
 
     const dragAndDrop$ = targetMouseDown$
         .do((event: Event) => {
+            event.preventDefault();
             console.log('Start dragging', event.target.id);
         })
         .switchMap((event: Event) => {
-            const target = event.target;
-
+            const data = { target: event.target };
             const move$ = docMouseMove$
                 .takeUntil(targetMouseUp$)
-                .map((event: Event) => ({ x: event.clientX, y: event.clientY, target, dropped: false }));
+                .do((event: Event) => Object.assign(data, { x: event.clientX, y: event.clientY }))
+                .mapTo(data);
 
+            // combine with the last {x, y}
+            const dropped$ = Rx.Observable.defer(() => Rx.Observable.of(Object.assign(data, { dropped: true })));
 
-            // TODO: combine with the last {x, y}
-            return move$.concat(Rx.Observable.of({ target, dropped: true }));
+            return move$.concat(dropped$);
         });
 
     dragAndDrop$.subscribe(({ x, y, target, dropped }) => {
         console.log('Dragging', target.id, x, y, dropped);
+
+        if (dropped === true) {
+            const $dropTarget = $(document.elementFromPoint(x, y)).closest('.droppable');
+            const $target = $(target);
+            if ($dropTarget.length && !$target.closest('.droppable').is($dropTarget)) {
+                // can drop it here
+                $dropTarget.append($target);
+            }
+        } else {
+            // TODO: create a 'moving'/'dragging' element
+        }
+
     });
 });
